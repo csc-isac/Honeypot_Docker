@@ -17,4 +17,5 @@ RUN sed -i "s/identifier = abc123/identifier = cowrie123/g" ~/cowrie/etc/cowrie.
 RUN sed -i "s/secret = secret/secret = secret123/g" ~/cowrie/etc/cowrie.cfg
 RUN sed -i 's/#debug=false/debug=false/' cowrie.cfg
 
-RUN . home/cowrie/cowrie/cowrie-env/bin/activate && home/cowrie/cowrie/bin/cowrie start && tail -f ~/cowrie/var/log/cowrie/cowrie.log
+RUN . home/cowrie/cowrie/cowrie-env/bin/activate && home/cowrie/cowrie/bin/cowrie start 
+# && tail -f ~/cowrie/var/log/cowrie/cowrie.log
