@@ -9,7 +9,7 @@ RUN echo 'cat > /opt/dionaea/etc/dionaea/ihandlers-enabled/hpfeeds.yaml <<EOF \n
     ident: SGU-Dio-1-Alsut\n\
     secret: password1234\n\
     # dynip_resolve: enable to lookup the sensor ip through a webservice\n\
-    #dynip_resolve: "http://canhazip.com/"\n\
+    #dynip_resolve: "http://---.com/"\n\
     # Try to reconnect after N seconds if disconnected from hpfeeds broker\n\
     # reconnect_timeout: 10.0\n\
 EOF\n'\
