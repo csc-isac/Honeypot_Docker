@@ -7,6 +7,8 @@ USER cowrie
 RUN cd ~/cowrie
 # All the cowrie resource is loacted at /home/cowrie/cowrie so with cd ~/cowrie basically we accessing the following path
 
+########################COWRIE MODIFICATION FIELD#############################################
+
 RUN sed -i 's/hostname = svr04/hostname = server-production/g' ~/cowrie/etc/cowrie.cfg
 # we can change the hostname here or uncomment it to use the default setting (svr04)
 
@@ -25,8 +27,12 @@ RUN sed -i "s/identifier = cowrie123/identifier = SGU-Cow-2-Alsut/g" ~/cowrie/et
 #RUN sed -i 's/DAEMONIZE=""/DAEMONIZE="-n"/' bin/cowrie
 # this is a command to change the cowrie Daemonize or not, to make the cowrie not a Daemon simply uncomment the command
 
+#########################COWRIE MODIFICATION FIELD END########################################
+
 USER root
 # To access the resources that dionaea need we should run as root 
+
+########################DIONAEA MODIFICATION FIELD#############################################
 
 RUN sed -i "s/errors.levels=warning,error/errors.levels=error/g" /opt/dionaea/etc/dionaea/dionaea.cfg
 # This command is to modify the dionaea cfg and to decide what should be logged
@@ -49,6 +55,9 @@ RUN echo 'cat > /opt/dionaea/etc/dionaea/ihandlers-enabled/hpfeeds.yaml <<EOF \n
 EOF\n'\
 >> test.sh
 # This is a command to create a bash script called test.sh that is consist of command to modify the hpfeeds.yaml modify the server, port, ident and secret that's all what you need to do
+
+
+#########################DIONAEA MODIFICATION FIELD END########################################
 
 RUN cat test.sh
 # This is to check if the test.sh is correct or not
