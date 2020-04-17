@@ -19,4 +19,7 @@ RUN sed -i "s/identifier = SGU-Cow-2-Alsut/identifier = cowrie123/g" ~/cowrie/et
 RUN sed -i "s/secret = password1234/secret = secret123/g" ~/cowrie/etc/cowrie.cfg
 #RUN sed -i 's/#debug=false/debug=false/' cowrie.cfg
 
-RUN . home/cowrie/cowrie/cowrie-env/bin/activate && home/cowrie/cowrie/bin/cowrie start && tail -f ~/cowrie/var/log/cowrie/cowrie.log
+CMD ["source home/cowrie/cowrie/cowrie-env/bin/activate" , "home/cowrie/cowrie/bin/cowrie start"] 
+#&& tail -f ~/cowrie/var/log/cowrie/cowrie.log
+
+#RUN . home/cowrie/cowrie/cowrie-env/bin/activate && tail -f ~/cowrie/var/log/cowrie/cowrie.log

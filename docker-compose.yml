@@ -1,0 +1,45 @@
+
+version: '3.4'
+
+services:
+  cowrie:
+    image: isif/cowrie_rd:version1
+    #restart: always
+    build:
+      network: host
+      context: .
+      dockerfile: Cowrie/Dockerfile
+      #command: home/cowrie/activator
+    ports:
+      - "2222:2222"
+      - "2223:2223"
+    tty: true
+    
+  dionaea:
+    image: isif/dionaea0.8:version1
+    #restart: always
+    build:
+      network: host
+      context: .
+      dockerfile: Dionaea/Dockerfile
+    ports:
+      - "21:21"
+      - "69:69"
+      - "80:80"
+      - "123:123"
+      - "135:135"
+      - "443:443"
+      - "445:445"
+      - "1433:1433"
+      - "1723:1723"
+      - "1883:1883"
+      - "1900:1900"
+      - "3306:3306"
+      - "5000:5000"
+      - "5060:5060"
+      - "5061:5061"
+      - "11211:11211"
+      - "27017:27017"
+    depends_on:
+      - cowrie
+    tty: true
