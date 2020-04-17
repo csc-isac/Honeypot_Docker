@@ -1,11 +1,19 @@
-version: '1'
+
+version: '3.4'
+
+volumes:
+  cowrie-etc:
+  cowrie-var:
+
 services:
-  dionaea:
-    image: isif/dionaea0.8:version1
-    volumes:
-      - ./dionaea.sysconfig:/etc/default/dionaea
-      - ./dionaea/dionaea:/etc/dionaea/
+  honeypot:
+    container_name: cowrie-dionaea
+    build:
+      network: host
+      context: .
+      dockerfile: Dockerfile
     ports:
+      - "22:2222"
       - "21:21"
       - "23:23"
       - "69:69"
@@ -24,5 +32,6 @@ services:
       - "5061:5061"
       - "11211:11211"
       - "27017:27017"
-    cap_add:
-      - NET_ADMIN
+    volumes:
+      - cowrie-etc:/cowrie/cowrie-git/etc
+      - cowrie-var:/cowrie/cowrie-git/var
