@@ -11,7 +11,7 @@ services:
       dockerfile: Cowrie/Dockerfile
       #command: home/cowrie/activator
     ports:
-      - "2222:2222"
+      - "22:2222"
       - "2223:2223"
     tty: true
     
