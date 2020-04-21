@@ -11,18 +11,18 @@ RUN ls -al
 # home/cowrie/cowrie/cowrie-env/bin/activate
 
 
-RUN sed -i 's/hostname = svr04/hostname = server/g' cowrie.cfg
+#RUN sed -i 's/hostname = svr04/hostname = server/g' ~/cowrie/etc/cowrie.cfg
 # we can change the hostname here or uncomment it to use the default setting (svr04)
 
-#RUN sed -i "s/server = 10.20.100.100 = $HPF_HOST/g" cowrie.cfg
+#RUN sed -i "s/server = 103.19.110.157/server = $HPF_HOST/g" ~/cowrie/etc/cowrie.cfg
 # this is a command to access cowrie.cfg and change the hpfeeds server you can change to whatever you want but for this testing the IP used is 10.20.100.100 you can change it to the IP that run Hpfeeds.
 
-#RUN sed -i "s/port = 10000/port = $HPF_PORT/g" cowrie.cfg
+#RUN sed -i "s/port = 10000/port = $HPF_PORT/g" ~/cowrie/etc/cowrie.cfg
 # this is a command to access cowrie.cfg and change the hpfeeds port the default is 10000, if you have differnt port uncomment it and change
 
-RUN sed -i "s/identifier = SGU-Cow-2-Alsut/identifier = cowrie123/g" ~/cowrie/etc/cowrie.cfg
+RUN sed -i "s/identifier = cowrie123/identifier = SGU-Cow-2-Alsut/g" ~/cowrie/etc/cowrie.cfg
 # this is a command to access cowrie.cfg and to modify the identifier the default is cowrie123 and the production identifier is ORG-HP-#-Location ask the administrator to add your own identifier along with secret
 
-#RUN sed -i "s/secret = password1234/secret = secret123/g" ~/cowrie/etc/cowrie.cfg
+RUN sed -i "s/secret = secret123/secret = password1234/g" ~/cowrie/etc/cowrie.cfg
 # this is a command to access cowrie.cfg and to modify the secret if you have different secret you can uncomment it and put your secret at the SECRET-FOR-IDENTIFIER field
 

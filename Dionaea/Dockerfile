@@ -10,7 +10,7 @@ RUN echo 'cat > /opt/dionaea/etc/dionaea/ihandlers-enabled/hpfeeds.yaml <<EOF \n
 - name: hpfeeds\n\
   config:\n\
     # fqdn/ip and port of the hpfeeds broker\n\
-    server: 10.20.100.100\n\
+    server: 103.19.110.157\n\
     port: 10000\n\
     ident: SGU-Dio-1-Alsut\n\
     secret: password1234\n\
