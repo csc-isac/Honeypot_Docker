@@ -1,4 +1,4 @@
-FROM isif/dionaea0.8:version1
+FROM isif/dionaea0.8:version2
 
 RUN sed -i "s/errors.levels=warning,error/errors.levels=error/g" /opt/dionaea/etc/dionaea/dionaea.cfg
 # This command is to modify the dionaea cfg and to decide what should be logged
