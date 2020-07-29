@@ -16,7 +16,7 @@ services:
     tty: true
     
   dionaea:
-    image: isif/dionaea0.8:version1
+    image: isif/dionaea0.8:version2
     #restart: always
     build:
       network: host
